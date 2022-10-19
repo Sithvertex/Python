@@ -12,7 +12,7 @@ finish_list = []
 
 with open('file.txt', 'r') as file:
     for i in file:
-        if -len(rn_list) < int(i) < len(rn_list):
+        if -len(rn_list) <= int(i) < len(rn_list):
             sum *= rn_list[int(i)]
             finish_list.append(rn_list[int(i)])
 
