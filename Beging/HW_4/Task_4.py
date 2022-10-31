@@ -12,7 +12,7 @@ k = int(input('Enter the degree of the polynomial: '))
 asd = []
 
 def function_wr():
-    return random.randint(0, 101)
+    return random.randint(0, 100)
 
 for i in range(k, 2, -1):
     poly = function_wr()
@@ -30,9 +30,19 @@ if k > 2:
     asd.append(f"{poly}x")
 elif k == 2:
     poly = function_wr()
-    asd.append(f"{poly}x^2")
-    poly = function_wr()
-    asd.append(f"{poly}x")
+    if poly != 0:
+        asd.append(f"{poly}x^2")
+        poly = function_wr()
+        if poly == 1:
+            asd.append(f"x")
+        else:
+            asd.append(f"{poly}x")
+    elif poly == 0:
+        poly = function_wr()
+        asd.append(f"{poly}x")
+
+
+
 elif k == 1:
     poly = function_wr()
     asd.append(f"{poly}x")
